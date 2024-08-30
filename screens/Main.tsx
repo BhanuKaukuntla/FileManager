@@ -19,6 +19,8 @@ import {
 import * as SecureStore from 'expo-secure-store';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as SplashScreen from 'expo-splash-screen';
+// import { MMKV } from 'react-native-mmkv';
+// export const storage = new MMKV();
 
 import { MainNavigator } from '../navigation/MainNavigator';
 
@@ -90,6 +92,20 @@ export default function Main() {
   if (locked && fontsLoaded) {
     return <LockScreen setLocked={setLocked} />;
   }
+
+  // const user = {
+  //   username: 'Marc',
+  //   age: 21
+  // }
+
+  // // Serialize the object into a JSON string
+  // storage.set('user', JSON.stringify(user))
+
+  // // Deserialize the JSON string into an object
+  // const jsonUser = storage.getString('user') // { 'username': 'Marc', 'age': 21 }
+  // const userObject = JSON.parse(jsonUser)
+
+  // console.log(userObject, "userObject")
 
   return (
     <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
